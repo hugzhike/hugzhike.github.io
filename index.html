@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Move Abroad Coaching — 1:1 Relocation Calls</title>
+<meta name="description" content="1:1 coaching for moving abroad without speaking the language or knowing a soul. The apartment, the job, and surviving month three.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16181C;
+    --ink-soft:#3A3E46;
+    --paper:#ECE7DB;
+    --paper-2:#E3DDCE;
+    --cobalt:#1F3FB0;
+    --cobalt-ink:#122470;
+    --amber:#D9992A;
+    --oxblood:#8E3B2E;
+    --line:#C9C2B0;
+    --pass:#0F1622;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Newsreader",Georgia,serif;
+    font-size:19px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  .wrap{max-width:660px;margin:0 auto;padding:0 22px}
+  .mono{font-family:"Space Mono",monospace;letter-spacing:.02em}
+  .disp{font-family:"Bricolage Grotesque",sans-serif;line-height:1.02;letter-spacing:-.02em}
+
+  /* eyebrow / route line */
+  .route{
+    font-family:"Space Mono",monospace;
+    font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--cobalt-ink);
+    display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  }
+  .route .arw{color:var(--amber);font-weight:700}
+
+  /* HERO */
+  .hero{padding:34px 0 46px;position:relative}
+  .ticket-top{
+    display:flex;justify-content:space-between;align-items:flex-end;
+    border-bottom:2px dashed var(--line);padding-bottom:16px;margin-bottom:30px;
+  }
+  .seal{
+    width:78px;height:78px;flex:0 0 78px;border-radius:50%;
+    border:2px solid var(--oxblood);color:var(--oxblood);
+    display:grid;place-items:center;text-align:center;
+    transform:rotate(-11deg);
+    opacity:0;animation:stamp .5s cubic-bezier(.2,1.4,.4,1) .5s forwards;
+  }
+  .seal span{font-family:"Space Mono",monospace;font-size:8.5px;letter-spacing:.06em;line-height:1.25;font-weight:700;text-transform:uppercase}
+  @keyframes stamp{
+    0%{opacity:0;transform:rotate(-11deg) scale(1.7)}
+    60%{opacity:1}
+    100%{opacity:.92;transform:rotate(-11deg) scale(1)}
+  }
+  @media (prefers-reduced-motion:reduce){.seal{animation:none;opacity:.92}}
+  h1.hero-h{
+    font-size:clamp(38px,10vw,62px);font-weight:800;margin:6px 0 20px;
+  }
+  h1 .amb{color:var(--cobalt)}
+  .hero-sub{font-size:20px;color:var(--ink-soft);max-width:34ch}
+  .hero-sub em{color:var(--ink);font-style:italic}
+
+  /* buttons */
+  .cta{
+    display:inline-flex;align-items:center;gap:12px;
+    background:var(--cobalt);color:#fff;text-decoration:none;
+    font-family:"Space Mono",monospace;font-weight:700;font-size:15px;
+    letter-spacing:.04em;text-transform:uppercase;
+    padding:17px 26px;border:none;border-radius:2px;
+    box-shadow:4px 4px 0 var(--cobalt-ink);
+    transition:transform .12s ease, box-shadow .12s ease;
+  }
+  .cta:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--cobalt-ink)}
+  .cta:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--cobalt-ink)}
+  .cta .tick{font-size:17px}
+  .cta:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+  .cta-row{margin-top:30px;display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+  .cta-note{font-size:14px;color:var(--ink-soft);font-family:"Space Mono",monospace;letter-spacing:.02em}
+
+  /* section shell */
+  section{padding:52px 0}
+  .kicker{
+    font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--cobalt-ink);
+    display:flex;align-items:center;gap:10px;margin-bottom:20px;
+  }
+  .kicker::before{content:"";width:26px;height:2px;background:var(--amber)}
+  h2{font-family:"Bricolage Grotesque",sans-serif;font-size:clamp(28px,7vw,40px);font-weight:800;line-height:1.05;letter-spacing:-.02em}
+
+  /* PROBLEM */
+  .problem{background:var(--pass);color:#EDE7DB}
+  .problem .wrap{padding-top:0;padding-bottom:0}
+  .problem .kicker,.problem .kicker::before{color:#D9992A}
+  .problem .kicker::before{background:#D9992A}
+  .problem h2{color:#fff;max-width:16ch}
+  .problem p{margin-top:22px;color:#BDB8AC;font-size:19px;max-width:44ch}
+  .problem p em{color:#fff;font-style:italic}
+
+  /* TIMELINE — signature */
+  .tl{border-top:2px solid var(--ink)}
+  .tl-lead{max-width:40ch;color:var(--ink-soft);margin-bottom:34px;font-size:19px}
+  .stop{
+    border-top:1px solid var(--line);padding:26px 0 26px 0;
+    display:grid;grid-template-columns:76px 1fr;gap:18px;align-items:start;
+  }
+  .stop:last-child{border-bottom:1px solid var(--line)}
+  .stop-no{
+    font-family:"Space Mono",monospace;font-weight:700;font-size:13px;
+    letter-spacing:.04em;color:#fff;background:var(--cobalt);
+    padding:6px 0;text-align:center;border-radius:2px;
+  }
+  .stop.crisis .stop-no{background:var(--oxblood)}
+  .stop.decide .stop-no{background:var(--ink)}
+  .stop h3{font-family:"Bricolage Grotesque",sans-serif;font-size:23px;font-weight:600;letter-spacing:-.01em}
+  .stop h3 .amb{color:var(--amber)}
+  .stop p{margin-top:6px;color:var(--ink-soft);font-size:17.5px}
+  .tl-foot{margin-top:26px;font-size:19px}
+  .tl-foot strong{color:var(--cobalt);font-weight:500;font-style:italic;font-family:"Newsreader",serif}
+
+  /* PACKAGE */
+  .pack{background:var(--paper-2);border-top:2px solid var(--ink)}
+  .call{
+    border-left:3px solid var(--cobalt);padding:4px 0 4px 20px;margin-bottom:26px;
+  }
+  .call .lbl{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--cobalt-ink)}
+  .call h3{font-family:"Bricolage Grotesque",sans-serif;font-size:22px;font-weight:600;margin:3px 0 6px;letter-spacing:-.01em}
+  .call p{font-size:17.5px;color:var(--ink-soft);max-width:46ch}
+  .async{border-left-color:var(--amber)}
+  .async .lbl{color:#9A6C10}
+
+  /* FIT */
+  .fit-grid{display:grid;gap:26px}
+  @media(min-width:560px){.fit-grid{grid-template-columns:1fr 1fr}}
+  .fit-card{border:1.5px solid var(--ink);padding:24px;border-radius:3px;background:var(--paper)}
+  .fit-card.no{background:transparent;border-style:dashed;border-color:var(--line)}
+  .fit-card h4{font-family:"Space Mono",monospace;font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:14px}
+  .fit-card.yes h4{color:var(--cobalt)}
+  .fit-card.no h4{color:var(--oxblood)}
+  .fit-card ul{list-style:none}
+  .fit-card li{padding:8px 0;border-bottom:1px solid var(--line);font-size:17px;color:var(--ink-soft)}
+  .fit-card li:last-child{border:none}
+  .fit-card li::before{content:"—  ";color:var(--amber);font-weight:700}
+
+  /* PRICE — ticket stub */
+  .price-sec{background:var(--pass)}
+  .stub{
+    background:var(--paper);color:var(--ink);border-radius:6px;overflow:hidden;
+    box-shadow:0 20px 40px rgba(0,0,0,.35);
+  }
+  .stub-top{padding:26px 26px 22px;border-bottom:2px dashed var(--line);position:relative}
+  .stub-top::before,.stub-top::after{
+    content:"";position:absolute;bottom:-11px;width:22px;height:22px;
+    background:var(--pass);border-radius:50%;
+  }
+  .stub-top::before{left:-11px}
+  .stub-top::after{right:-11px}
+  .stub .plabel{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--cobalt-ink)}
+  .stub h3{font-family:"Bricolage Grotesque",sans-serif;font-size:30px;font-weight:800;margin:8px 0 4px;letter-spacing:-.02em}
+  .stub .sub{color:var(--ink-soft);font-size:17px}
+  .stub-bot{padding:22px 26px 26px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  .price-fig{font-family:"Space Mono",monospace;font-weight:700;font-size:30px;color:var(--ink)}
+  .price-fig small{display:block;font-size:11px;letter-spacing:.1em;color:var(--ink-soft);font-weight:400;text-transform:uppercase}
+  .price-sec h2{color:#fff;margin-bottom:26px;max-width:18ch}
+
+  /* PROOF */
+  .quote{border-top:1px solid var(--line);padding:28px 0}
+  .quote:last-of-type{border-bottom:1px solid var(--line)}
+  .quote p{font-size:21px;line-height:1.45}
+  .quote p::before{content:"“";color:var(--amber);font-size:26px}
+  .quote p::after{content:"”";color:var(--amber);font-size:26px}
+  .quote .who{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--cobalt-ink);margin-top:12px}
+  .ph{background:repeating-linear-gradient(45deg,var(--paper-2),var(--paper-2) 8px,var(--paper) 8px,var(--paper) 16px);outline:1px dashed var(--line)}
+
+  /* FINAL CTA */
+  .final{background:var(--cobalt);color:#fff;text-align:center}
+  .final h2{color:#fff;max-width:20ch;margin:0 auto 18px}
+  .final p{max-width:40ch;margin:0 auto 30px;color:#DCE0F5;font-size:19px}
+  .cta.ghost{background:#fff;color:var(--cobalt);box-shadow:4px 4px 0 var(--cobalt-ink)}
+  .cta.ghost:hover{box-shadow:6px 6px 0 var(--cobalt-ink)}
+  .links{margin-top:28px;display:flex;gap:22px;justify-content:center;flex-wrap:wrap}
+  .links a{color:#fff;font-family:"Space Mono",monospace;font-size:13px;letter-spacing:.04em;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4);padding-bottom:2px}
+  .links a:hover{border-color:#fff}
+  .links a:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+
+  /* footer */
+  footer{background:var(--pass);color:#8D8878;text-align:center;padding:30px 22px}
+  footer .mono{font-size:12px;letter-spacing:.08em}
+  .ed{color:var(--amber)}
+
+  /* reveal */
+  .rv{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+  .rv.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap">
+    <div class="ticket-top">
+      <div class="route">
+        Departure: Home <span class="arw">→</span> Arrival: <span>somewhere you can't pronounce yet</span>
+      </div>
+      <div class="seal"><span>No<br>Safety<br>Net</span></div>
+    </div>
+
+    <div class="route" style="margin-bottom:14px">One-way · 1:1 coaching</div>
+    <h1 class="disp hero-h">Move somewhere you know <span class="amb">no one</span> and speak <span class="amb">nothing</span>. On&nbsp;purpose.</h1>
+    <p class="hero-sub">The coaching for the part nobody posts about — <em>landing the apartment, the job, and the version of you that survives month three.</em></p>
+
+    <div class="cta-row">
+      <a class="cta" href="https://instagram.com/hugz.hike"><span class="tick">✦</span> Start with a DM</a>
+      <span class="cta-note">No booking link. I take people I can actually help. →</span>
+    </div>
+  </div>
+</header>
+
+<!-- ============ PROBLEM ============ -->
+<section class="problem">
+  <div class="wrap">
+    <div class="kicker">The real barrier</div>
+    <h2>You're not scared of moving abroad. You're scared of being nobody for 18 months.</h2>
+    <p>At home you're the funny one, the competent one, the one who knows how everything works. Abroad you're the person who can't order bread, can't sign a lease, can't get hired without an address — and can't get an address without a job. <em>That loop is the whole problem. Breaking it is the whole job.</em></p>
+  </div>
+</section>
+
+<!-- ============ TIMELINE (signature) ============ -->
+<section class="tl">
+  <div class="wrap">
+    <div class="kicker">The timeline nobody warns you about</div>
+    <p class="tl-lead">Every move runs the same three phases. Most people quit in the second one — right before it gets real.</p>
+
+    <div class="stop rv">
+      <div class="stop-no">MONTH 01</div>
+      <div>
+        <h3>The <span class="amb">holiday</span></h3>
+        <p>Everything is a photo. You haven't hit a single wall yet. This is the part TikTok sells you.</p>
+      </div>
+    </div>
+
+    <div class="stop crisis rv">
+      <div class="stop-no">MONTH 03</div>
+      <div>
+        <h3>The <span class="amb">crisis</span></h3>
+        <p>The admin, the silence, the €60 you overpaid because correcting him in a language you barely speak felt worse than losing the money.</p>
+      </div>
+    </div>
+
+    <div class="stop decide rv">
+      <div class="stop-no">MONTH 07</div>
+      <div>
+        <h3>The <span class="amb">decision</span></h3>
+        <p>This is when you find out if you actually live here — or if you've just been visiting for half a year.</p>
+      </div>
+    </div>
+
+    <p class="tl-foot">I coach you through all three. <strong>Especially month three.</strong></p>
+  </div>
+</section>
+
+<!-- ============ PACKAGE ============ -->
+<section class="pack">
+  <div class="wrap">
+    <div class="kicker">What you actually get</div>
+    <h2 style="margin-bottom:14px">The relocation package</h2>
+    <p style="color:var(--ink-soft);max-width:42ch;margin-bottom:34px">A multi-call package built around your specific city and your specific situation — not a generic checklist you could find free on my feed.</p>
+
+    <div class="call rv">
+      <div class="lbl">Call 01 · The map</div>
+      <h3>Your city, your money, your month-four math</h3>
+      <p>Visa reality, the real cost of landing, and the plan that survives being broke in month four — not the fantasy budget.</p>
+    </div>
+
+    <div class="call rv">
+      <div class="lbl">Call 02 · The loops</div>
+      <h3>Breaking the apartment loop and the job loop</h3>
+      <p>Nobody rents to a foreigner with no job. Nobody hires a foreigner with no address. Here's exactly how you break the chicken-and-egg.</p>
+    </div>
+
+    <div class="call rv">
+      <div class="lbl">Call 03 · Landing the life</div>
+      <h3>Language survival + not being alone</h3>
+      <p>The 40 words that get you an apartment, and how to make your first real friend through a shared inconvenience — not a shared interest.</p>
+    </div>
+
+    <div class="call async rv">
+      <div class="lbl">Between calls · Async</div>
+      <h3>Voice notes when you hit a wall</h3>
+      <p>When something breaks at 11pm in a language you don't speak, you don't wait a week for the next call. You message me.</p>
+    </div>
+    <p style="color:var(--ink-soft);font-size:15px;font-family:'Space Mono',monospace;letter-spacing:.02em;margin-top:6px">// Number of calls, cadence and inclusions are your call — swap in the real details.</p>
+  </div>
+</section>
+
+<!-- ============ FIT ============ -->
+<section>
+  <div class="wrap">
+    <div class="kicker">Read this before you message me</div>
+    <div class="fit-grid">
+      <div class="fit-card yes rv">
+        <h4>This is for you if</h4>
+        <ul>
+          <li>You're actually going, not just scrolling about it</li>
+          <li>There's no family money bailing you out</li>
+          <li>You'd rather hear the month-four math than "follow your dreams"</li>
+        </ul>
+      </div>
+      <div class="fit-card no rv">
+        <h4>This is not for you if</h4>
+        <ul>
+          <li>You want a checklist you can screenshot for free</li>
+          <li>You want me to tell you it'll be easy</li>
+          <li>You're not ready to pick a date and a country</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICE ============ -->
+<section class="price-sec">
+  <div class="wrap">
+    <div class="kicker">The ticket</div>
+    <h2>One package. One person who's done it, in your corner.</h2>
+    <div class="stub rv">
+      <div class="stub-top">
+        <div class="plabel">Boarding · Relocation Coaching</div>
+        <h3>The Relocation Package</h3>
+        <div class="sub">10 calls over 6 weeks · async support between · your city, your plan</div>
+      </div>
+      <div class="stub-bot">
+        <div class="price-fig" style="font-size:16px;line-height:1.35;max-width:16ch">Pricing shared by DM<small>Once we know it's a fit — that's the point</small></div>
+        <a class="cta" href="https://instagram.com/hugz.hike"><span class="tick">✦</span> Claim your spot</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROOF ============ -->
+<section>
+  <div class="wrap">
+    <div class="kicker">From people who went</div>
+    <div class="quote rv">
+      <p class="ph" style="display:block;padding:10px;border-radius:3px">Testimonial goes here — a specific one. Keep the detail: the city, the month it got hard, the exact thing that changed.</p>
+      <div class="who">— First name, city they moved to</div>
+    </div>
+    <div class="quote rv">
+      <p class="ph" style="display:block;padding:10px;border-radius:3px">Second testimonial. A screenshot of a DM works even better than a polished quote for this audience.</p>
+      <div class="who">— First name, city they moved to</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final" id="book">
+  <div class="wrap">
+    <div class="kicker" style="justify-content:center;color:#fff">Boarding now</div>
+    <h2>There's no booking link. On purpose.</h2>
+    <p>I only take people I can actually help. Message me where you're trying to go and when — I'll tell you straight if I'm the right person for it.</p>
+    <a class="cta ghost" href="https://instagram.com/hugz.hike"><span class="tick">✦</span> DM @hugz.hike</a>
+    <div class="links">
+      <a href="https://instagram.com/hugz.hike">Instagram</a>
+      <a href="https://tiktok.com/@hugz.hike">TikTok</a>
+      <a href="mailto:hugz.hikes@gmail.com">hugz.hikes@gmail.com</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="mono">hugz.hike (HH) · Relocation coaching<br><span class="ed">Brand & press:</span> hugz.hikes@gmail.com</div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.15});
+  document.querySelectorAll('.rv').forEach((el,i)=>{ el.style.transitionDelay=(i%4*60)+'ms'; io.observe(el); });
+</script>
+</body>
+</html>
